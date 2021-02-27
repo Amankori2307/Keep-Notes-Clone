@@ -4,7 +4,8 @@ INSTALLED_APPS += [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-    'drf_yasg'
+    'drf_yasg',
+    'keepnotes.apps.KeepnotesConfig'
 ]
 
 REST_FRAMEWORK = {
@@ -17,6 +18,13 @@ REST_FRAMEWORK = {
 }
 
 
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+]
+
 # Swagger Settings
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
@@ -27,3 +35,6 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+# Auth user model
+AUTH_USER_MODEL = 'keepnotes.MyUser'

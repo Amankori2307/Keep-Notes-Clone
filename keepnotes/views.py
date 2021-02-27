@@ -11,6 +11,8 @@ class NotesListView(views.APIView):
     permission_classes = [NotesPermission]
     authentication_classes = [TokenAuthentication]
 
+    # def post(self, request):
+        
     def get(self, request):
         notes = getNotesForUser(Notes, request.user.id)
         serializedNotes = NotesListSerializer(notes, many=True)

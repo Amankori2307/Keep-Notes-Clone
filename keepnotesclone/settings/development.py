@@ -1,11 +1,11 @@
 from .base import *
 
 INSTALLED_APPS += [
+    'keepnotes.apps.KeepnotesConfig',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
     'drf_yasg',
-    'keepnotes.apps.KeepnotesConfig'
 ]
 
 REST_FRAMEWORK = {
